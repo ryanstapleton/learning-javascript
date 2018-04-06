@@ -3,10 +3,17 @@
 // 	- an instantiation of a class is the house itself
 
 class Instructor {
-  constructor({ name }) {
+  constructor({ name, role = 'assistant' }) {
     this.name = name;
+    this.role = role;
+  }
+
+  renderDetails() {
+    console.log(`${this.name}: ${this.role}`)
   }
 }
 
 const dude = new Instructor({name: 'Mr. Dude'})
-console.log(dude.name);
+const brayden = new Instructor({name: 'Brayden', role: 'teacher'})
+dude.renderDetails();
+brayden.renderDetails();
